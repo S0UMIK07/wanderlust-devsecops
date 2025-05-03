@@ -47,6 +47,7 @@ pipeline {
                 withKubeConfig(credentialsId: 'k8s-secret') {
                     script {
                         sh "kubectl create ns devsecops"
+                        sh "kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml"
                         sh "kubectl apply -f ./kubernetes -n devsecops"
 
                         sh "kubectl get pods -n devsecops"
