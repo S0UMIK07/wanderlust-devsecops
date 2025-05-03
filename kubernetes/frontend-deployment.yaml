@@ -19,7 +19,7 @@ spec:
             value: "http://35.225.228.144:5000"
         resources:
           limits:
-            memory: "128Mi"
+            memory: "513Mi"
             cpu: "500m"
         ports:
         - containerPort: 5173
